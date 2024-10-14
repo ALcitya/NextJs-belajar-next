@@ -1,0 +1,50 @@
+[
+  {
+    "nama": "Vivo",
+    "seri": "X Fold3 Pro",
+    "ram": "16GB",
+    "rom": "512GB",
+    "layar": "Amoled 8.03 inci",
+    "kamera_depan": "32 MP",
+    "kamera_belakang": "50 MP",
+    "port": "type C",
+    "baterai": "5700 Mah",
+    "harga": "26999000"
+  },
+  {
+    "nama": "Vivo",
+    "seri": "X100 pro",
+    "ram": "16GB",
+    "rom": "512GB",
+    "layar": "Amoled 6.78 inci",
+    "kamera_depan": "32 MP",
+    "kamera_belakang": "50 MP",
+    "port": "type C",
+    "baterai": "5400 Mah",
+    "harga": "16999000"
+  },
+  {
+    "nama": "Vivo",
+    "seri": "X100",
+    "ram": "12GB",
+    "rom": "256GB",
+    "layar": "Amoled 6.78 inci",
+    "kamera_depan": "32 MP",
+    "kamera_belakang": "50 MP",
+    "port": "type C",
+    "baterai": "5000 Mah",
+    "harga": "11999000"
+  },
+  {
+    "nama": "Vivo",
+    "seri": "V40 5G",
+    "ram": "12GB",
+    "rom": "256GB",
+    "layar": "Amoled 6.78 inci",
+    "kamera_depan": "32 MP",
+    "kamera_belakang": "50 MP",
+    "port": "type C",
+    "baterai": "5500 Mah",
+    "harga": "6999000"
+  }
+]

@@ -1,37 +1,58 @@
-import CardList from "../components/posts/CardList"
-import ViewUserButton from "../components/posts/ViewUserButton"
-
-const base_url = "https://jsonplaceholder.typicode.com/posts"
-
-interface InPost {
-    userId:number,
-    id:number,
-    title:string,
-    body:string
-
-}
-
-const Post = async() =>{
-    const response = await fetch(base_url, {
-        cache: "no-store"
-    })
-    const post:InPost[] = await response.json()
+import CardList from "../components/posts/CardList";
+// tipe data untuk product dalam json
+interface Product {
+    nama: string;
+    seri: string;
+    ram: string;
+    rom: string;
+    layar: string;
+    kamera_depan: string;
+    kamera_belakang: string;
+    port: string;
+    baterai: string;
+    harga: string;
+  } 
+// Async component to fetch data
+const Page = async () => {
+    // Fetch data from the public folder
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`);
+    const data: Product[] = await res.json();
+  
     return (
-        <>
-        <p>{new Date().toLocaleTimeString()}</p>
-        <h1 className= "text-fuchsia-500">Postingan Page</h1>
-        {post.map((posts) => {
-            return (
-                <CardList key={posts.id} >
-                <p>{posts.id}</p>
-                <b>{posts.title}</b>
-                <p>{posts.body}</p>
-                <br />
-                <ViewUserButton userId={posts.userId}/>
-            </CardList>
-            )
-        })}
-        </>
-    )
-}
-export default Post
+      <div>
+        <h1>Product List</h1>
+        <CardList>
+            <table>
+                    <tr>
+                    <td>Nama</td>
+                    <td>Seri</td>
+                    <td>Ram</td>
+                    <td>Rom</td>
+                    <td>Layar</td>
+                    <td>Kamera Depan</td>
+                    <td>Kamera Belakang</td>
+                    <td>Port</td>
+                    <td>Baterai</td>
+                    <td>Harga</td>
+                    </tr>
+                    {data.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.nama}</td>
+                        <td>{item.seri}</td>
+                        <td>{item.ram}</td>
+                        <td>{item.rom}</td>
+                        <td>{item.layar}</td>
+                        <td>{item.kamera_depan}</td>
+                        <td>{item.kamera_belakang}</td>
+                        <td>{item.port}</td>
+                        <td>{item.baterai}</td>
+                        <td> Rp. {item.harga}</td>
+                    </tr>
+                ))}
+            </table>
+        </CardList>
+      </div>
+    );
+  };
+  
+  export default Page;
